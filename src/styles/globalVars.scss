@@ -1,0 +1,58 @@
+// colors
+$green-dark: #0f4641;
+$green: #aabe9b;
+$green-light: #d7e1d2;
+
+$red: #cd1e4b;
+$red-light: #f0788c;
+$purple-light: #f5e6e6;
+
+$orange: #f07d00;
+$orange-light: #f5aa78;
+$beige: #faf0e6;
+
+$yellow: #ffc846;
+$yellow-light: #fff0a5;
+$yellow-very-light: #fff5d7;
+
+$black: #000;
+$white: #fff;
+$brown: #64463c;
+
+// fonts
+@font-face {
+  font-family: "Classico Black";
+  src: url("../fonts/ClassicoURW-Bla.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Classico Bold";
+  src: url("../fonts/ClassicoURW-Bol.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Classico Regular";
+  src: url("../fonts/ClassicoURW-Reg.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Poppins Bold";
+  src: url("../fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins Regular";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins Light";
+  src: url("../fonts/Poppins-Light.ttf") format("truetype");
+}
+
+$classico-black: "Classico Black", sans-serif;
+$classico-bold: "Classico Bold", sans-serif;
+$classico-regular: "Classico Regular", sans-serif;
+$poppins-bold: "Poppins Bold", sans-serif;
+$poppins-regular: "Poppins Regular", sans-serif;
+$poppins-light: "Poppins Light", sans-serif;
