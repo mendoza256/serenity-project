@@ -1,15 +1,29 @@
-const TextMedia = () => {
+import { sanitize } from "isomorphic-dompurify";
+
+export type TextType = {
+  headline: string;
+  text: string | Node;
+  backgroundColor: string;
+};
+
+interface TextProps {
+  data: TextType;
+}
+
+const Text = ({ data }: TextProps) => {
+  const { headline, text, backgroundColor } = data;
+  const bgColorClass = backgroundColor
+    ? `bg-${backgroundColor?.toLowerCase()}`
+    : "bg-default";
+
   return (
-    <section className="text">
-      <div className="container">
-        <h2>Text Media</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-          voluptatum.
-        </p>
+    <section className={`text ${bgColorClass}`}>
+      <div className={`container`}>
+        <h2>{headline}</h2>
+        <p dangerouslySetInnerHTML={{ __html: sanitize(text) }} />
       </div>
     </section>
   );
 };
 
-export default TextMedia;
+export default Text;

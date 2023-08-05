@@ -28,7 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/queries/posts.ts"
+    "src/graphql/queries/posts.ts"
   ],
   "exclude": ["node_modules"]
 }

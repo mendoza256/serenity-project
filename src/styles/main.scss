@@ -1,1 +1,43 @@
 @import "./globalVars.scss";
+@import "./mixins.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: $classico-regular;
+  //   font-family: $poppins-regular;
+  color: $black;
+  background-color: $color-default;
+}
+
+.container {
+  padding: 0.75rem;
+  margin: 0 auto;
+
+  @include desktop {
+    max-width: 960px;
+  }
+
+  @include widescreen {
+    max-width: 1152px;
+  }
+
+  @include fullhd {
+    max-width: 1344px;
+  }
+
+  @include ultrahd {
+    max-width: 1536px;
+  }
+}
+
+.bg-default {
+  background-color: $color-default;
+}
