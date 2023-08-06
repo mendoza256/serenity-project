@@ -93,7 +93,6 @@ export const getPages = async () => {
   return await getData(GET_PAGES);
 };
 
-// get page modules by page id
 export const getPageProps = async (id: string) => {
   return await getData(GET_PAGE_MODULES, id);
 };

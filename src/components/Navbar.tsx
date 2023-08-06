@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useWindowSize } from "../../utils/useWindowSize";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,6 +10,11 @@ const Navbar = () => {
   const isTouch = width < 768;
 
   useEffect(() => {
+    if (window.location.pathname !== "/") {
+      setIsVisible(true);
+      return;
+    }
+
     const handleScroll = () => {
       const firstSection = document.querySelector(
         "main > section:first-of-type"
@@ -33,7 +39,9 @@ const Navbar = () => {
   return (
     <nav className={`text-bold ${isVisible ? "visible" : ""}`}>
       <div className="container flex-between">
-        <div className="navbar-brand uppercase">Serenity</div>
+        <Link href="/" title="Home" aria-label="Back to home page">
+          <span className="navbar-brand uppercase">Serenity</span>
+        </Link>
         <div className="menu">
           {isTouch ? (
             // TODO add mobile menu
@@ -41,7 +49,15 @@ const Navbar = () => {
           ) : (
             <li className="flex-row">
               <ul>Link</ul>
-              <ul>Link</ul>
+              <ul>
+                <Link
+                  href="/about"
+                  title="About Page"
+                  aria-label="Link to about page"
+                >
+                  About
+                </Link>
+              </ul>
               <ul>Find a Retailer</ul>
             </li>
           )}
