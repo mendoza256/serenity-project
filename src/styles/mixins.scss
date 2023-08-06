@@ -36,212 +36,221 @@
 }
 
 // helpers
-@mixin flex-center {
+.flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@mixin flex-column {
+.flex-column {
   display: flex;
   flex-direction: column;
 }
 
-@mixin flex-row {
+.flex-row {
   display: flex;
   flex-direction: row;
 }
 
-@mixin flex-wrap {
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flex-wrap {
   display: flex;
   flex-wrap: wrap;
 }
 
-@mixin flex-wrap-reverse {
+.flex-wrap-reverse {
   display: flex;
   flex-wrap: wrap-reverse;
 }
 
-@mixin flex-nowrap {
+.flex-nowrap {
   display: flex;
   flex-wrap: nowrap;
 }
 
-@mixin flex-start {
+.flex-start {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-@mixin flex-end {
+.flex-end {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
 
-@mixin flex-between {
+.flex-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-@mixin flex-around {
+.flex-around {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-@mixin flex-evenly {
+.flex-evenly {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-@mixin flex-initial {
+.flex-initial {
   display: flex;
   justify-content: initial;
   align-items: initial;
 }
 
-@mixin flex-fill {
+.flex-fill {
   display: flex;
   justify-content: fill;
   align-items: fill;
 }
 
-@mixin flex-stretch {
+.flex-stretch {
   display: flex;
   justify-content: stretch;
   align-items: stretch;
 }
 
-@mixin flex-baseline {
+.flex-baseline {
   display: flex;
   justify-content: baseline;
   align-items: baseline;
 }
 
-@mixin flex-justify-center {
+.flex-justify-center {
   display: flex;
   justify-content: center;
 }
 
-@mixin flex-justify-start {
+.flex-justify-start {
   display: flex;
   justify-content: flex-start;
 }
 
-@mixin flex-justify-end {
+.flex-justify-end {
   display: flex;
   justify-content: flex-end;
 }
 
-@mixin flex-justify-between {
+.flex-justify-between {
   display: flex;
   justify-content: space-between;
 }
 
-@mixin flex-justify-around {
+.flex-justify-around {
   display: flex;
   justify-content: space-around;
 }
 
-@mixin flex-justify-evenly {
+.flex-justify-evenly {
   display: flex;
   justify-content: space-evenly;
 }
 
-@mixin flex-justify-initial {
+.flex-justify-initial {
   display: flex;
   justify-content: initial;
 }
 
-@mixin flex-justify-fill {
+.flex-justify-fill {
   display: flex;
   justify-content: fill;
 }
 
-@mixin flex-justify-stretch {
+.flex-justify-stretch {
   display: flex;
   justify-content: stretch;
 }
 
-@mixin flex-justify-baseline {
+.flex-justify-baseline {
   display: flex;
   justify-content: baseline;
 }
 
-@mixin flex-align-center {
+.flex-align-center {
   display: flex;
   align-items: center;
 }
 
-@mixin flex-align-start {
+.flex-align-start {
   display: flex;
   align-items: flex-start;
 }
 
-@mixin flex-align-end {
+.flex-align-end {
   display: flex;
   align-items: flex-end;
 }
 
-@mixin flex-align-between {
+.flex-align-between {
   display: flex;
   align-items: space-between;
 }
 
-@mixin flex-align-around {
+.flex-align-around {
   display: flex;
   align-items: space-around;
 }
 
-@mixin flex-align-evenly {
+.flex-align-evenly {
   display: flex;
   align-items: space-evenly;
 }
 
-@mixin flex-align-initial {
+.flex-align-initial {
   display: flex;
   align-items: initial;
 }
 
-@mixin flex-align-fill {
+.flex-align-fill {
   display: flex;
   align-items: fill;
 }
 
-@mixin flex-align-stretch {
+.flex-align-stretch {
   display: flex;
   align-items: stretch;
 }
 
-@mixin flex-align-baseline {
+.flex-align-baseline {
   display: flex;
   align-items: baseline;
 }
 
-@mixin w-full {
+.w-full {
   width: 100%;
 }
 
-@mixin h-full {
+.w-half {
+  width: 50%;
+}
+
+.h-full {
   height: 100%;
 }
 
-@mixin w-auto {
+.w-auto {
   width: auto;
 }
 
-@mixin h-auto {
+.h-auto {
   height: auto;
 }
 
-@mixin w-fullscreen {
+.w-fullscreen {
   width: 100vw;
 }
 
-@mixin h-fullscreen {
+.h-fullscreen {
   height: 100vh;
   height: 100dvh;
 }

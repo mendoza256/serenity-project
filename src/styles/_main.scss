@@ -1,0 +1,164 @@
+@import "./globalVars.scss";
+@import "./mixins.scss";
+@import "./reset.scss";
+@import "swiper/css";
+@import "./slider.scss";
+@import "./textMedia.scss";
+@import "./text.scss";
+@import "./header.scss";
+@import "./navbar.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: $classico-regular;
+  // font-family: $poppins-regular;
+  background-color: $color-default;
+}
+
+section {
+  padding: 1rem;
+
+  @include desktop {
+    padding: 2rem;
+  }
+
+  @include widescreen {
+    padding: 3rem 4rem;
+  }
+
+  @include fullhd {
+    padding: 4rem 5rem;
+  }
+
+  @include ultrahd {
+    padding: 5rem 6rem;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.4;
+  font-family: $classico-black;
+  text-transform: uppercase;
+
+  @include desktop {
+    font-size: 4rem;
+  }
+
+  @include fullhd {
+    font-size: 5rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+
+  @include desktop {
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  @include fullhd {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &.text-bold {
+    font-family: $classico-bold;
+  }
+}
+
+h3 {
+  font-size: 1.75rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+
+  @include desktop {
+    font-size: 1.875rem;
+    margin-bottom: 1.125rem;
+  }
+
+  @include fullhd {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &.text-bold {
+    font-family: $classico-bold;
+  }
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+
+  @include desktop {
+    font-size: 1.25rem;
+  }
+
+  @include fullhd {
+    font-size: 1.325rem;
+  }
+}
+
+.container {
+  padding: 0.75rem;
+  margin: 0 auto;
+
+  @include desktop {
+    max-width: 960px;
+  }
+
+  @include widescreen {
+    max-width: 1152px;
+  }
+
+  @include fullhd {
+    max-width: 1344px;
+  }
+
+  @include ultrahd {
+    max-width: 1536px;
+  }
+}
+
+.bg-default {
+  background-color: $color-default;
+
+  p {
+    color: $white;
+  }
+}
+
+.bg-green {
+  background-color: $green;
+
+  p {
+    color: $white;
+  }
+}
+
+.bg-yellow {
+  background-color: $yellow-light;
+}
+
+.bg-orange {
+  background-color: $orange-light;
+}
+
+.p-default {
+  padding: 0.75rem;
+}
+
+.text-center {
+  text-align: center;
+}

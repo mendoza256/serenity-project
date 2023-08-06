@@ -6,16 +6,10 @@ const GET_PAGES = gql`
     pages {
       slug
       modules {
-        ... on Slider {
+        ... on TextModule {
           headline
+          text
           backgroundColor
-          images {
-            width
-            height
-            id
-            url
-            mimeType
-          }
         }
         ... on TextMediaModule {
           headline
@@ -25,15 +19,26 @@ const GET_PAGES = gql`
           image {
             width
             height
-            id
             url
-            mimeType
           }
         }
-        ... on TextModule {
+        ... on Slider {
           headline
-          text
           backgroundColor
+          images {
+            width
+            height
+            url
+          }
+        }
+      }
+      header {
+        pageTitle
+        subline
+        headerMedia {
+          url
+          height
+          width
         }
       }
     }
@@ -64,7 +69,8 @@ const GET_PAGE_MODULES = gql`
   }
 `;
 
-const getData = async (QUERY, id?: string) => {
+// TODO add Query type
+const getData = async (QUERY: any, id?: string) => {
   let variables;
   if (id) {
     variables = {

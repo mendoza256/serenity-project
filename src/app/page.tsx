@@ -1,7 +1,11 @@
 import DynamicPage from "./[...slug]/page";
 
-export const Page = ({ params }) => {
-  return <DynamicPage params={params} />;
-};
+interface PageProps {
+  params: {
+    slug: string[];
+  };
+}
 
-export default Page;
+export default function Page({ params }: PageProps) {
+  return <DynamicPage params={params} />;
+}

@@ -1,7 +1,11 @@
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import Modules from "@/components/Modules";
-import { getPageProps, getPages } from "@/graphql/queries/getData";
+import Navbar from "@/components/Navbar";
+import { getPages } from "@/graphql/queries/getData";
 import { PageType } from "@/types/baseTypes";
-import { type } from "os";
+
+export const revalidate = 1;
 
 export async function generateStaticParams() {
   const data = await getPages();
@@ -23,15 +27,25 @@ const getPageDataBySlug = async (slug: string) => {
   return data?.pages.find((page: PageType) => page.slug === slug);
 };
 
-export const DynamicPage = async ({ params }) => {
+interface DynamicPageProps {
+  params: {
+    slug: string[];
+  };
+}
+
+export const DynamicPage = async ({ params }: DynamicPageProps) => {
   const slug = params?.slug?.[0] ?? "home";
   const pageData = await getPageDataBySlug(slug);
 
   return (
-    <div>
-      home
-      {pageData?.modules && <Modules modules={pageData.modules} />}
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <Header data={pageData.header} />
+        {pageData?.modules && <Modules modules={pageData.modules} />}
+      </main>
+      <Footer />
+    </>
   );
 };
 

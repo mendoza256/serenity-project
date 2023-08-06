@@ -20,7 +20,7 @@ const Modules = ({ modules }: ModulesProps) => {
     }
   });
 
-  return <div>{moduleJSX}</div>;
+  return <>{moduleJSX}</>;
 };
 
 export default Modules;

@@ -1,3 +1,4 @@
+"use client";
 import { sanitize } from "isomorphic-dompurify";
 
 export type TextType = {
@@ -16,11 +17,17 @@ const Text = ({ data }: TextProps) => {
     ? `bg-${backgroundColor?.toLowerCase()}`
     : "bg-default";
 
+  const headlineJSX = text ? (
+    <h3 className="text-bold">{headline}</h3>
+  ) : (
+    <h2 className={text ? "text-bold" : "text-center text-bold"}>{headline}</h2>
+  );
+
   return (
     <section className={`text ${bgColorClass}`}>
       <div className={`container`}>
-        <h2>{headline}</h2>
-        <p dangerouslySetInnerHTML={{ __html: sanitize(text) }} />
+        {headline && headlineJSX}
+        {text && <p dangerouslySetInnerHTML={{ __html: sanitize(text) }} />}
       </div>
     </section>
   );
