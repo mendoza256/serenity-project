@@ -17,12 +17,12 @@ body {
   height: 100%;
   width: 100%;
   font-family: $classico-regular;
-  // font-family: $poppins-regular;
-  background-color: $color-default;
+  background-color: $black;
 }
 
-section {
-  padding: 1rem;
+section,
+footer {
+  padding: 1rem 0;
 
   @include desktop {
     padding: 2rem;
@@ -39,6 +39,12 @@ section {
   @include ultrahd {
     padding: 5rem 6rem;
   }
+}
+
+footer {
+  min-height: 20vh;
+  background-color: $green-dark;
+  color: $white;
 }
 
 h1 {
@@ -69,10 +75,6 @@ h2 {
   @include fullhd {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-  }
-
-  &.text-bold {
-    font-family: $classico-bold;
   }
 }
 
@@ -141,10 +143,6 @@ p {
 
 .bg-green {
   background-color: $green;
-
-  p {
-    color: $white;
-  }
 }
 
 .bg-yellow {
@@ -161,4 +159,16 @@ p {
 
 .text-center {
   text-align: center;
+}
+
+.text-bold {
+  font-family: $classico-bold;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.pb-0 {
+  padding-bottom: 0;
 }

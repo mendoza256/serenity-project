@@ -5,6 +5,7 @@ import { ImageType } from "@/types/baseTypes";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
+import { assignBackgroundColor } from "../../utils/helpers";
 
 export type SliderType = {
   headline: string;
@@ -18,18 +19,16 @@ interface SliderProps {
 
 const Slider = ({ data }: SliderProps) => {
   const { headline, images, backgroundColor } = data;
-  const bgColorClass = backgroundColor
-    ? `bg-${backgroundColor?.toLowerCase()}`
-    : "bg-default";
+  const bgColorClass = assignBackgroundColor(backgroundColor);
 
   return (
     <section className={`slider ${bgColorClass}`}>
       <motion.div
         className={`container`}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: false }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
       >
         <h2>{headline}</h2>
         <Swiper
@@ -42,7 +41,7 @@ const Slider = ({ data }: SliderProps) => {
               slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 2,
+              slidesPerView: 4,
             },
           }}
           modules={[Autoplay]}
@@ -62,7 +61,6 @@ const Slider = ({ data }: SliderProps) => {
                   alt=""
                   width={image.width}
                   height={image.height}
-                  // layout="fill"
                 />
               </SwiperSlide>
             );

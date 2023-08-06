@@ -6,13 +6,17 @@
   height: 100dvh;
   overflow: hidden;
 
+  @include mobile-only {
+    padding: 1rem;
+  }
+
   .content {
     position: absolute;
     z-index: 2;
     background-color: $green-dark;
     padding-bottom: 0;
     // color: $yellow-very-light;
-    color: $beige;
+    color: $yellow-very-light;
 
     .p-default {
       padding-bottom: 0;

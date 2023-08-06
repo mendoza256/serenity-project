@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 export type HeaderType = {
   pageTitle: string;
@@ -17,7 +16,6 @@ interface HeaderProps {
 
 const Header = ({ data }: HeaderProps) => {
   const { pageTitle, subline, headerMedia } = data;
-  const [videoLoading, setVideoLoading] = useState(null);
 
   return (
     <>
@@ -38,16 +36,10 @@ const Header = ({ data }: HeaderProps) => {
             <h1>{pageTitle}</h1>
           </motion.div>
         </motion.div>
+        {/* TODO add video loading transition */}
         <div className="video-wrapper">
-          {videoLoading && <div className="video-loading">Loading</div>}
           {headerMedia?.url && (
-            <video
-              onLoadStart={() => setVideoLoading(false)}
-              onLoad={() => setVideoLoading(true)}
-              autoPlay
-              loop
-              src={headerMedia.url}
-            ></video>
+            <video autoPlay muted loop src={headerMedia.url}></video>
           )}
         </div>
       </section>

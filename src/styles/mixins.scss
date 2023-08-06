@@ -36,6 +36,7 @@
 }
 
 // helpers
+// TODO remove unused classes
 .flex-center {
   display: flex;
   justify-content: center;
@@ -49,22 +50,24 @@
 
 .flex-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  @include desktop {
+    flex-direction: row;
+  }
 }
 
 .flex-row-reverse {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
+
+  @include desktop {
+    flex-direction: row-reverse;
+  }
 }
 
 .flex-wrap {
   display: flex;
   flex-wrap: wrap;
-}
-
-.flex-wrap-reverse {
-  display: flex;
-  flex-wrap: wrap-reverse;
 }
 
 .flex-nowrap {
@@ -96,36 +99,6 @@
   align-items: center;
 }
 
-.flex-evenly {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.flex-initial {
-  display: flex;
-  justify-content: initial;
-  align-items: initial;
-}
-
-.flex-fill {
-  display: flex;
-  justify-content: fill;
-  align-items: fill;
-}
-
-.flex-stretch {
-  display: flex;
-  justify-content: stretch;
-  align-items: stretch;
-}
-
-.flex-baseline {
-  display: flex;
-  justify-content: baseline;
-  align-items: baseline;
-}
-
 .flex-justify-center {
   display: flex;
   justify-content: center;
@@ -149,26 +122,6 @@
 .flex-justify-around {
   display: flex;
   justify-content: space-around;
-}
-
-.flex-justify-evenly {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.flex-justify-initial {
-  display: flex;
-  justify-content: initial;
-}
-
-.flex-justify-fill {
-  display: flex;
-  justify-content: fill;
-}
-
-.flex-justify-stretch {
-  display: flex;
-  justify-content: stretch;
 }
 
 .flex-justify-baseline {
@@ -196,31 +149,6 @@
   align-items: space-between;
 }
 
-.flex-align-around {
-  display: flex;
-  align-items: space-around;
-}
-
-.flex-align-evenly {
-  display: flex;
-  align-items: space-evenly;
-}
-
-.flex-align-initial {
-  display: flex;
-  align-items: initial;
-}
-
-.flex-align-fill {
-  display: flex;
-  align-items: fill;
-}
-
-.flex-align-stretch {
-  display: flex;
-  align-items: stretch;
-}
-
 .flex-align-baseline {
   display: flex;
   align-items: baseline;
@@ -231,7 +159,11 @@
 }
 
 .w-half {
-  width: 50%;
+  width: 100%;
+
+  @include desktop {
+    width: 50%;
+  }
 }
 
 .h-full {

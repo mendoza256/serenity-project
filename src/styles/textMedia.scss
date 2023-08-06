@@ -15,4 +15,24 @@
     padding: 0.75rem;
     flex-direction: column;
   }
+
+  .container {
+    gap: 0;
+
+    @include desktop {
+      gap: 1.75rem;
+    }
+
+    @include widescreen {
+      gap: 2.5rem;
+    }
+
+    @include fullhd {
+      gap: 3.5rem;
+    }
+
+    @include ultrahd {
+      gap: 4.5rem;
+    }
+  }
 }

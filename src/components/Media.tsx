@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 const Media = () => {
+  // TODO finish module
   return (
     <section>
       <div className="container">
