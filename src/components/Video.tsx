@@ -1,5 +1,3 @@
-import { useRef } from "react";
-
 export const InternalVideo = ({ url }: { url: string }) => {
   const options = {
     autoPlay: true,
