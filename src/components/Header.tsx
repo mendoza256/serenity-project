@@ -39,7 +39,9 @@ const Header = ({ data }: HeaderProps) => {
         {/* TODO add video loading transition */}
         <div className="video-wrapper">
           {headerMedia?.url && (
-            <video autoPlay muted loop src={headerMedia.url}></video>
+            <video playsInline autoPlay muted loop controls={false}>
+              <source src={headerMedia.url} type="video/webm" />
+            </video>
           )}
         </div>
       </section>
