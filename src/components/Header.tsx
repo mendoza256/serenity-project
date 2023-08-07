@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import VideoAutoPlay from "./VideoAutoPlay";
+import { InternalVideo } from "./Video";
 
 export type HeaderType = {
   pageTitle: string;
@@ -39,7 +40,8 @@ const Header = ({ data }: HeaderProps) => {
         </motion.div>
         {/* TODO add video loading transition */}
         <div className="video-wrapper">
-          {headerMedia?.url && <VideoAutoPlay url={headerMedia.url} />}
+          {/* {headerMedia?.url && <VideoAutoPlay url={headerMedia.url} />} */}
+          {headerMedia?.url && <InternalVideo url={headerMedia.url} />}
         </div>
       </section>
     </>
