@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import VideoAutoPlay from "./VideoAutoPlay";
 
 export type HeaderType = {
   pageTitle: string;
@@ -38,11 +39,7 @@ const Header = ({ data }: HeaderProps) => {
         </motion.div>
         {/* TODO add video loading transition */}
         <div className="video-wrapper">
-          {headerMedia?.url && (
-            <video playsInline autoPlay muted loop controls={false}>
-              <source src={headerMedia.url} type="video/webm" />
-            </video>
-          )}
+          {headerMedia?.url && <VideoAutoPlay url={headerMedia.url} />}
         </div>
       </section>
     </>
