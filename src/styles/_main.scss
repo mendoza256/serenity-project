@@ -112,6 +112,22 @@ p {
   }
 }
 
+.btn {
+  text-decoration: none;
+  background-color: $green-dark;
+  color: $white;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+  max-width: fit-content;
+  transition: all 0.5s ease-out;
+  border: 1px solid $green-dark;
+
+  &:hover {
+    background-color: $green;
+    color: $black;
+  }
+}
+
 .container {
   padding: 0.75rem;
   margin: 0 auto;
@@ -149,7 +165,7 @@ p {
 }
 
 .bg-yellow {
-  background-color: $yellow-light;
+  background-color: $yellow-very-light;
 }
 
 .bg-orange {

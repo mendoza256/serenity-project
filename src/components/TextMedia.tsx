@@ -33,7 +33,12 @@ const TextMedia = ({ data }: TextMediaProps) => {
       >
         <div className="text-media__text w-half flex-justify-center">
           <h3 className="text-bold">{headline}</h3>
-          <p dangerouslySetInnerHTML={{ __html: sanitize(text) }} />
+          {text && (
+            <div
+              className="content flex-column"
+              dangerouslySetInnerHTML={{ __html: sanitize(text) }}
+            />
+          )}
         </div>
         <div className="text-media__media w-half flex-align-center">
           {image.url && (

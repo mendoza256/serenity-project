@@ -26,7 +26,7 @@ const Text = ({ data }: TextProps) => {
     <section className={`text ${bgColorClass} ${text ? "" : "pb-0"}`}>
       <div className={`container`}>
         {headline && headlineJSX}
-        {text && <p dangerouslySetInnerHTML={{ __html: sanitize(text) }} />}
+        {text && <div dangerouslySetInnerHTML={{ __html: sanitize(text) }} />}
       </div>
     </section>
   );
