@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import client from "../apollo-client";
+import { getClient } from "../apollo-client";
 
 const GET_PAGES = gql`
   query Pages {
@@ -79,9 +79,14 @@ const getData = async (QUERY: any, id?: string) => {
   }
 
   try {
-    const { data } = await client.query({
+    const { data } = await getClient().query({
       query: QUERY,
       variables,
+      context: {
+        fetchOptions: {
+          next: { revalidate: 5 },
+        },
+      },
     });
     return data;
   } catch (error) {

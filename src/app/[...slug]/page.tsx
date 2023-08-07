@@ -5,8 +5,6 @@ import Navbar from "@/components/Navbar";
 import { getPages } from "@/graphql/queries/getData";
 import { PageType } from "@/types/baseTypes";
 
-export const revalidate = 1;
-
 export async function generateStaticParams() {
   const data = await getPages();
   const pages = data?.pages as PageType[];
@@ -41,7 +39,7 @@ export const DynamicPage = async ({ params }: DynamicPageProps) => {
     <>
       <Navbar />
       <main>
-        <Header data={pageData.header} />
+        {pageData?.header && <Header data={pageData?.header} />}
         {pageData?.modules && <Modules modules={pageData.modules} />}
       </main>
       <Footer />
