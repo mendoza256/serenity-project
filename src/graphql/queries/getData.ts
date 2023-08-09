@@ -5,7 +5,7 @@ const GET_PAGES = gql`
   query Pages {
     pages {
       slug
-      modules {
+      modules(first: 100) {
         ... on TextModule {
           headline
           text
@@ -36,6 +36,11 @@ const GET_PAGES = gql`
         pageTitle
         subline
         headerMedia {
+          url
+          height
+          width
+        }
+        videoPoster {
           url
           height
           width

@@ -1,13 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import VideoAutoPlay from "./VideoAutoPlay";
-import { InternalVideo } from "./Video";
+import { Video } from "./Video";
 
 export type HeaderType = {
   pageTitle: string;
   subline: string;
   headerMedia: {
+    url: string;
+  };
+  videoPoster: {
     url: string;
   };
 };
@@ -17,7 +19,8 @@ interface HeaderProps {
 }
 
 const Header = ({ data }: HeaderProps) => {
-  const { pageTitle, subline, headerMedia } = data;
+  const { pageTitle, subline, headerMedia, videoPoster } = data;
+  const videoPosterUrl = videoPoster?.url ?? "";
 
   return (
     <>
@@ -38,10 +41,10 @@ const Header = ({ data }: HeaderProps) => {
             <h1>{pageTitle}</h1>
           </motion.div>
         </motion.div>
-        {/* TODO add video loading transition */}
         <div className="video-wrapper">
-          {/* {headerMedia?.url && <VideoAutoPlay url={headerMedia.url} />} */}
-          {headerMedia?.url && <InternalVideo url={headerMedia.url} />}
+          {headerMedia?.url && (
+            <Video videoUrl={headerMedia.url} posterUrl={videoPosterUrl} />
+          )}
         </div>
       </section>
     </>

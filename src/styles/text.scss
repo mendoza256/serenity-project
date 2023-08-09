@@ -1,4 +1,17 @@
 .text {
+  &.headline-only {
+    .container {
+      display: grid;
+      place-items: center;
+
+      height: 40vh;
+
+      @include desktop {
+        height: 30vh;
+      }
+    }
+  }
+
   .container {
     > * {
       padding: 0.75rem;
