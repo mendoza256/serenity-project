@@ -1,15 +1,21 @@
-export const InternalVideo = ({ url }: { url: string }) => {
-  const options = {
-    autoPlay: true,
-    muted: true,
-    controls: false,
-    loop: true,
-    src: url,
-    playsInline: true,
-    preload: "auto",
-  };
-
-  const videoJSX = <video {...options} />;
-
-  return <>{videoJSX}</>;
+export const Video = ({
+  videoUrl,
+  posterUrl,
+}: {
+  videoUrl: string;
+  posterUrl: string;
+}) => {
+  return (
+    <video
+      autoPlay
+      muted
+      controls={false}
+      loop
+      playsInline
+      preload="auto"
+      poster={posterUrl}
+    >
+      <source src={videoUrl} type="video/mp4" />
+    </video>
+  );
 };

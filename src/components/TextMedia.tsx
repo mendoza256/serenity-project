@@ -29,7 +29,7 @@ const TextMedia = ({ data }: TextMediaProps) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.5 }}
       >
         <div className="text-media__text w-half flex-justify-center">
           <h3 className="text-bold">{headline}</h3>

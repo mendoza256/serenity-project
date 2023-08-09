@@ -1,6 +1,7 @@
 "use client";
 import { sanitize } from "isomorphic-dompurify";
 import { assignBackgroundColor } from "../../utils/helpers";
+import { motion } from "framer-motion";
 
 export type TextType = {
   headline: string;
@@ -23,11 +24,17 @@ const Text = ({ data }: TextProps) => {
   );
 
   return (
-    <section className={`text ${bgColorClass} ${text ? "" : "pb-0"}`}>
-      <div className={`container`}>
+    <section className={`text ${bgColorClass} ${text ? "" : "headline-only"}`}>
+      <motion.div
+        className={`container`}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true, amount: 0.8 }}
+      >
         {headline && headlineJSX}
         {text && <div dangerouslySetInnerHTML={{ __html: sanitize(text) }} />}
-      </div>
+      </motion.div>
     </section>
   );
 };

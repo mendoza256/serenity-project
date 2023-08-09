@@ -4,7 +4,7 @@ const Footer = () => {
     <footer>
       <div className="container">
         <div className="p-default">
-          <p className="text-bold">Footer</p>
+          <p className="text-bold"></p>
         </div>
       </div>
     </footer>
