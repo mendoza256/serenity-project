@@ -32,14 +32,14 @@ interface DynamicPageProps {
 }
 
 export const DynamicPage = async ({ params }: DynamicPageProps) => {
-  const slug = params?.slug?.[0] ?? "home";
+  const slug = params?.slug?.[0] ?? "home"; // if slug = undefined, set slug to "home"
   const pageData = await getPageDataBySlug(slug);
 
   return (
     <>
       <Navbar />
       <main>
-        {pageData?.header && <Header data={pageData?.header} />}
+        {pageData?.header && <Header data={pageData.header} />}
         {pageData?.modules && <Modules modules={pageData.modules} />}
       </main>
       <Footer />

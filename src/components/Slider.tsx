@@ -4,13 +4,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { ImageType } from "@/types/baseTypes";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
-import { motion } from "framer-motion";
 import { assignBackgroundColor } from "../../utils/helpers";
+import FadeIn from "./animations/FadeIn";
 
 export type SliderType = {
   headline: string;
   images: ImageType[];
   backgroundColor: string;
+  __typename: "Slider";
 };
 
 interface SliderProps {
@@ -23,13 +24,7 @@ const Slider = ({ data }: SliderProps) => {
 
   return (
     <section className={`slider ${bgColorClass}`}>
-      <motion.div
-        className={`container`}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        viewport={{ once: true }}
-      >
+      <FadeIn>
         <h2>{headline}</h2>
         <Swiper
           spaceBetween={0}
@@ -66,7 +61,7 @@ const Slider = ({ data }: SliderProps) => {
             );
           })}
         </Swiper>
-      </motion.div>
+      </FadeIn>
     </section>
   );
 };

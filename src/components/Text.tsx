@@ -1,11 +1,13 @@
 "use client";
 import { sanitize } from "isomorphic-dompurify";
 import { assignBackgroundColor } from "../../utils/helpers";
+import FadeIn from "./animations/FadeIn";
 
 export type TextType = {
   headline: string;
   text: string | Node;
   backgroundColor: string;
+  __typename: "TextModule";
 };
 
 interface TextProps {
@@ -23,11 +25,11 @@ const Text = ({ data }: TextProps) => {
   );
 
   return (
-    <section className={`text ${bgColorClass} ${text ? "" : "pb-0"}`}>
-      <div className={`container`}>
+    <section className={`text ${bgColorClass} ${text ? "" : "headline-only"}`}>
+      <FadeIn>
         {headline && headlineJSX}
         {text && <div dangerouslySetInnerHTML={{ __html: sanitize(text) }} />}
-      </div>
+      </FadeIn>
     </section>
   );
 };

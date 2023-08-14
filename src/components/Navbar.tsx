@@ -9,6 +9,7 @@ const Navbar = () => {
   const { width } = useWindowSize();
   const isTouch = width < 768;
 
+  // TODO make this into client component that takes children as props
   useEffect(() => {
     if (window.location.pathname !== "/") {
       setIsVisible(true);
