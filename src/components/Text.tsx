@@ -1,10 +1,7 @@
 "use client";
 import { sanitize } from "isomorphic-dompurify";
 import { assignBackgroundColor } from "../../utils/helpers";
-<<<<<<< Updated upstream
-=======
 import FadeIn from "./animations/FadeIn";
->>>>>>> Stashed changes
 
 export type TextType = {
   headline: string;
@@ -28,19 +25,11 @@ const Text = ({ data }: TextProps) => {
   );
 
   return (
-<<<<<<< Updated upstream
-    <section className={`text ${bgColorClass} ${text ? "" : "pb-0"}`}>
-      <div className={`container`}>
-        {headline && headlineJSX}
-        {text && <div dangerouslySetInnerHTML={{ __html: sanitize(text) }} />}
-      </div>
-=======
     <section className={`text ${bgColorClass} ${text ? "" : "headline-only"}`}>
       <FadeIn>
         {headline && headlineJSX}
         {text && <div dangerouslySetInnerHTML={{ __html: sanitize(text) }} />}
       </FadeIn>
->>>>>>> Stashed changes
     </section>
   );
 };

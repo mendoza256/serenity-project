@@ -25,17 +25,7 @@ const TextMedia = ({ data }: TextMediaProps) => {
 
   return (
     <section className={`text-media ${bgColorClass}`}>
-<<<<<<< Updated upstream
-      <motion.div
-        className={`container ${textIsLeft ? "flex-row" : "flex-row-reverse"}`}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        viewport={{ once: true }}
-      >
-=======
       <FadeIn className={`${textIsLeft ? "flex-row" : "flex-row-reverse"}`}>
->>>>>>> Stashed changes
         <div className="text-media__text w-half flex-justify-center">
           <h3 className="text-bold">{headline}</h3>
           {text && (

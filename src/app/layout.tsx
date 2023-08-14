@@ -13,7 +13,6 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
       <html lang="en">
         <body>{children}</body>
       </html>
