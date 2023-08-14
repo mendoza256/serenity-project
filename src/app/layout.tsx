@@ -12,8 +12,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <html lang="en">
+        <body>{children}</body>
+      </html>
+    </>
   );
 }

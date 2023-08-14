@@ -1,10 +1,10 @@
 "use client";
 
 import { ImageType } from "@/types/baseTypes";
-import { motion } from "framer-motion";
 import { sanitize } from "isomorphic-dompurify";
 import Image from "next/image";
 import { assignBackgroundColor } from "../../utils/helpers";
+import FadeIn from "./animations/FadeIn";
 
 export type TextMediaType = {
   headline: string;
@@ -12,6 +12,7 @@ export type TextMediaType = {
   image: ImageType;
   backgroundColor: string;
   textIsLeft: boolean;
+  __typename: "TextMediaModule";
 };
 
 interface TextMediaProps {
@@ -24,6 +25,7 @@ const TextMedia = ({ data }: TextMediaProps) => {
 
   return (
     <section className={`text-media ${bgColorClass}`}>
+<<<<<<< Updated upstream
       <motion.div
         className={`container ${textIsLeft ? "flex-row" : "flex-row-reverse"}`}
         initial={{ opacity: 0 }}
@@ -31,6 +33,9 @@ const TextMedia = ({ data }: TextMediaProps) => {
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
       >
+=======
+      <FadeIn className={`${textIsLeft ? "flex-row" : "flex-row-reverse"}`}>
+>>>>>>> Stashed changes
         <div className="text-media__text w-half flex-justify-center">
           <h3 className="text-bold">{headline}</h3>
           {text && (
@@ -52,7 +57,7 @@ const TextMedia = ({ data }: TextMediaProps) => {
             />
           )}
         </div>
-      </motion.div>
+      </FadeIn>
     </section>
   );
 };
