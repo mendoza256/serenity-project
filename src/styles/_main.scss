@@ -112,6 +112,27 @@ p {
   }
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.25rem;
+
+  li {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "•";
+      color: $black;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
 .btn {
   text-decoration: none;
   background-color: $green-dark;

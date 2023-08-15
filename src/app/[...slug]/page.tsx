@@ -38,7 +38,7 @@ export const DynamicPage = async ({ params }: DynamicPageProps) => {
   return (
     <>
       <Navbar />
-      <main>
+      <main id={slug}>
         {pageData?.header && <Header data={pageData.header} />}
         {pageData?.modules && <Modules modules={pageData.modules} />}
       </main>
